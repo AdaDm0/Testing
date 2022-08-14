@@ -4,12 +4,14 @@
 #include <iostream>
 #include <conio.h>
 #include "Menu.h"
+#include "User.h"
 using namespace std;
 
 int main()
 {
-	Menu::menu();
-		
+	//Menu::entrance();
+	User user = User::questionare();
+	User::saveData(user);
 
 }
 
