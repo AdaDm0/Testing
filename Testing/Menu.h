@@ -17,15 +17,18 @@ public:
 		cout << endl;
 		switch (c) {
 			//если ввели 1 - вход
-			case 49:
-				break;
+		case 49:
+
+			break;
 			// если ввели  2 - регистрация
-			case 50:
-				User user = User::questionare();
+		case 50:
+			User user = User::questionare();
+			if (!Database::isUnique(user.getLogin())) {
+				Database::saveData(user);
 				//Database::saveData(User u = User::questionare());
-				;
+			}
+			break;
 		}
-			
 
 	}
 };

@@ -9,9 +9,8 @@ using namespace std;
 
 int main()
 {
-	//Menu::entrance();
-	User user = User::questionare();
-	User::saveData(user);
+	Menu::entrance();
+	
 
 }
 

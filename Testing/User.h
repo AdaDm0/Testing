@@ -18,6 +18,10 @@ public:
 	static User questionare() {
 		//string surname, name, patronymiс, adress, telephone, login, password;
 		User user;
+		cout << "Login:		";
+		cin >> user.login;
+		cout << "Password:		";
+		cin >> user.password;
 		cout << "Surname:	";
 		cin >> user.surname;
 		cout << "Name:	";
@@ -28,24 +32,11 @@ public:
 		cin >> user.adress;
 		cout << "Telephone:		";
 		cin >> user.telephone;
-		cout << "Login:		";
-		cin >> user.login;
-		cout << "Password:		";
-		cin >> user.password;
 		return user;
 	}
 
-	static void saveData(User user) {
-		//FILE* users = fopen("Users.txt", "a+");
-		//if (!users) {
-		//	exit(0);
-		//}
-		//else {
-		//	fwrite(/*"запистаь сюда адрес что записываем"*/User &a, sizeof(char), 1, users);
-		//	fclose(users);
-		//}
-
-		//добавление пользователя в файл
+	//добавление пользователя в файл
+	/*static void saveData(User user) {
 		ofstream dataOut;
 		dataOut.open("User data.txt", ofstream::app);
 		if (!dataOut.is_open()) {
@@ -55,10 +46,27 @@ public:
 			dataOut.write((char*)&user, sizeof(User));
 		}
 		dataOut.close();
+	}*/
+
+	string getLogin() {
+		return login;
 	}
 
+	void setLogin(string newLogin) {
+		login = newLogin;
+	}
 
-	// создать метод, который все переменные превращает в строку, для передачи в database
+	void print(User user) {
+		//удалить логин и пароль из вывода
+		cout << "Login:		" << user.login;
+		cout << "Password:		" << user.password;
+		cout << "Surname:	"<< user.surname;
+		cout << "Name:	"<< user.name;
+		cout << "Patronymiс:	"<< user.patronymiс;
+		cout << "Adress:	"<< user.adress;
+		cout << "Telephone:		"<< user.telephone;
+	}
+	
 };
 
 
